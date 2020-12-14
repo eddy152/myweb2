@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html/ex.html</title>
+</head>
+
+<body>
+    <h3>선택사항을 입력하세요.</h3>
+    <form>
+        <label>전공 분야를 입력하세요.
+            <input type="text" list="majorlist" name="major">
+            <datalist id="majorlist">
+                <option value="Software">소프트웨어</option>
+                <option value="Robot">로봇</option>
+                <option value="System">시스템</option>
+                <option value="Service">서비스</option>
+                <option value="Education">교육</option>
+            </datalist></p>
+        </label>
+        <h3>오늘 날짜 입력</h3>
+        Today : <input type="date" name="today">
+        <h3>프로젝트 수행 기간</h3>
+        From : <input type="date" name="from" min="2016-03-01" max="2016-12-31">
+        To : <input type="date" name="to" min="2018-03-01" max="2018-06-30"></p>
+        <h3>현재 시간 입력</h3>
+        Time : <input type="time" name="Now">
+        <h3>생일(년도, 월, 일, 시간) 입력</h3>
+        Birthday : <input type="datetime-local" name="bdaytime"><p></p>
+        <input type="submit" value="완료">
+        <input type="reset" value="다시작성">
+    </form>
+</body>
+
+</html>
