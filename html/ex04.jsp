@@ -14,7 +14,7 @@
         String user_id = request.getParameter("user_id");
         String bdaytime = request.getParameter("bdaytime");
         String sex = request.getParameter("sex");
-        String email = request.getParameter("email");
+        String email = request.getParameter("myemail");
         String emailYN = request.getParameter("emailYN");
         String phone = request.getParameter("phone");
         String phone2 = request.getParameter("phone2");
