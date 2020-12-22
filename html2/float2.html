@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/float2.html</title>
+    <style>
+        header {
+            background-color: #666;
+            color: white;
+        }
+        h2{
+            display: inline-block;
+        }
+        ul{
+            display: inline-block;
+            list-style-type: none;
+        }
+        ul>li{
+            display: inline-block;
+        }
+        section {
+            background-color: rgb(161, 155, 155);
+        }
+
+        section>nav {
+            float: left;
+            width: 30%;
+            height: 300px;
+            background-color: rgb(236, 121, 121);
+        }
+
+        footer {
+            background-color: rgb(243, 234, 234);
+        }
+
+        section>article {
+            float: none;
+            width: 70%;
+            height: 300px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>CSS Layout Float</h2>
+    <p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will
+        stack on top of each other.</p>
+    <p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML
+        Responsive.)</p>
+
+    <header>
+        <h2>Cities</h2>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h1>London</h1>
+            <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a
+                metropolitan area of over 13 million inhabitants.London is the capital city of England. It is the most populous city in the United Kingdom, with a
+                metropolitan area of over 13 million inhabitants.London is the capital city of England. It is the most populous city in the United Kingdom, with a
+                metropolitan area of over 13 million inhabitants.London is the capital city of England. It is the most populous city in the United Kingdom, with a
+                metropolitan area of over 13 million inhabitants.London is the capital city of England. It is the most populous city in the United Kingdom, with a
+                metropolitan area of over 13 million inhabitants.London is the capital city of England. It is the most populous city in the United Kingdom, with a
+                metropolitan area of over 13 million inhabitants.London is the capital city of England. It is the most populous city in the United Kingdom, with a
+                metropolitan area of over 13 million inhabitants.</p>
+            <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going
+                back to its founding by the Romans, who named it Londinium.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+
+</body>
+
+</html>
