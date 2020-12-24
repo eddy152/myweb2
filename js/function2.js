@@ -56,17 +56,58 @@
 // }
 // console.log('최대값 : ' + hN);
 
-let nu2 = window.prompt('num1를 입력하세요.');
-let num2 = window.prompt('num2를 입력하세요.');
-diffSum(nu2, num2);
-function diffSum(a, b) {
-    let sum = 0;
-    let a1 = parseInt(a);
-    let b2 = parseInt(b);
-    while (a1 < b2) {
-        sum += a1;
-        console.log(a1);
-        a1++;
-    }
-    console.log('a부터 b까지의 합 : ' + sum);
+// let nu2 = window.prompt('num1를 입력하세요.');
+// let num2 = window.prompt('num2를 입력하세요.');
+// diffSum(nu2, num2);
+// function diffSum(a, b) {
+//     let sum = 0;
+//     let a1 = parseInt(a);
+//     let b2 = parseInt(b);
+//     while (a1 < b2) {
+//         sum += a1;
+//         console.log(a1);
+//         a1++;
+//     }
+//     console.log('a부터 b까지의 합 : ' + sum);
+// }
+
+// let friend1 = {};
+// friend1.name = 'Hong';
+// friend1.age = 21;
+// friend1.hobby = 'Youtube';
+
+// let friend2 = {
+//     name: 'Hwang',
+//     age: 30,
+//     hobby: 'LOL'
+// }
+
+// let friend3 = {};
+// friend3.name = window.prompt('이름을 입력하세요.');
+// friend3.age = window.prompt('나이를 입력하세요.');
+// friend3.hobby = window.prompt('취미를 입력하세요.');
+
+// let friends = [friend1, friend2, friend3];
+
+friends = [];
+for (let i = 0; i <3; i++) {
+    let nameIn = window.prompt('이름을 입력하세요.');
+    let ageIn = +window.prompt('나이를 입력하세요.');
+    let friend = {};
+    friend.name = nameIn;
+    friend.age = ageIn;
+    friends[i] = friend;
 }
+
+document.write('<table border="1"><tr>')
+for (fr in friends[0]) {
+    document.write('<th>' + fr + '</th>')
+}
+for (friend of friends) {
+    document.write('<tr>')
+    for (field in friend) {
+        document.write('<td>' + friend[field] + '</td>')
+    }
+    document.write('</tr>')
+}
+

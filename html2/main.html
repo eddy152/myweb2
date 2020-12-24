@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html2/main.html</title>
     <style>
-        td{
+        td {
             background-color: greenyellow;
         }
+
         .even {
             background-color: yellow;
         }
@@ -21,16 +22,27 @@
 
 <body>
     <div id="show">
-        <h1>Hello</h1>
+        <h1>Main 페이지</h1>
     </div>
-    <input type="text" id="name1" onchange="nameFunc()">
-    <script src="/js/function2.js"></script>
+    <table border="1" id="friends">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>취미</th>
+        </tr>
+    </table>
+    </p>
+    <!-- 과일 : <input type="text" id="fruit" value="Melon"></p> -->
+    이름 : <input type="text" id="name" value="홍길동"><br>
+    나이 : <input type="text" id="age" value=20><br>
+    취미 : <input type="text" id="hobby" value="낚시"></p>
+    <button onclick="input_friend()" style="width: 225px; height: 50px;">입력</button>
+    <script src="/js/function5.js"></script>
     <!-- <img src="https://www.w3schools.com/js/pic_bulboff.gif"></p>
     <button onclick="turnOn()">Turn On</button>
     <button onclick="turnOff()">Turn Off</button> -->
 
 
-    <button onclick="myFunc()">Click</button>
 </body>
 
 </html>
