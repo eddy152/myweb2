@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/calender.html</title>
+</head>
+
+<body>
+    <div id="show">
+    </div>
+    <script>
+        let s1 = document.getElementById('show');
+
+        let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Str'];
+        let tableTag = document.createElement('table');
+        let tr = document.createElement('tr');
+
+        for (let i = 0; i < days.length; i++) {
+            let td = document.createElement('th');
+            td.innerHTML = days[i];
+            tr.append(td);
+            td.style.backgroundColor = 'orange';
+        }
+        tableTag.append(tr);
+        tableTag.setAttribute('border', '1');   
+        document.getElementById('show').append(tableTag);
+
+        let trTag = document.createElement('tr');
+        for (let i = 1; i <= 31; i++) {
+            let td = document.createElement('td');
+            td.innerHTML = i;
+            trTag.append(td);
+            if (i % 7 == 1) {
+                td.setAttribute('style', 'background: red; color: white; text-align:center;')
+            }
+            else if (i % 7 == 0) {
+                td.setAttribute('style', 'background: blue; color: white; text-align:center;')
+                tableTag.append(trTag);
+                trTag = document.createElement('tr');
+            }
+        }
+        tableTag.append(trTag);
+        document.getElementById('show').append(tableTag);
+    </script>
+</body>
+
+</html>

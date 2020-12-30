@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/form.html</title>
+</head>
+
+<body>
+    <table border="1" id="show">
+    </table>
+    <script>
+        let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Str'];
+        let tr = document.createElement('tr');
+
+        for (day in days) {
+            let td = document.createElement('th');
+            td.innerHTML = days[day];
+            tr.append(td);
+        }
+        for (let i = 1; i <= 31; i++) {
+            if (i % 7 == 1) {
+                document.getElementById('show').append(tr);
+                tr = document.createElement('tr');
+            }
+            let td = document.createElement('td');
+            td.innerHTML = i;
+            tr.append(td);
+        }
+        document.getElementById('show').append(tr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/form.html</title>
+</head>
+
+<body>
+    <table border="1" id="show">
+    </table>
+    <script>
+        let members = [];
+        let member = {
+            name: '홍길동',
+            age: '25세',
+            hobby: '독서'
+        }
+        for (let i = 1; i <= 3; i++) {
+            let member = {};
+            member.name = '홍길동' + i;
+            member.age = 20 + i + '세';
+            member.hobby = '독서' + i;
+            members.push(member);
+        }
+        for (let i = 0; i < members.length; i++) {
+            let tr = document.createElement('tr');
+
+            let tdLabel = document.createElement('td');
+            let label = document.createElement('label')
+            let input = document.createElement('input')
+
+            label.setAttribute('for', 'id');
+            label.innerHTML = 'ID ';
+            tdLabel.append(label);
+
+            input.setAttribute('type', 'checkbox');
+            tdLabel.append(input);
+            tr.append(tdLabel);
+
+            let tdName = document.createElement('td');
+            tdName.innerHTML = members[i].name;
+            tr.append(tdName);
+
+            let tdAge = document.createElement('td');
+            tdAge.innerHTML = members[i].age;
+            tr.append(tdAge);
+
+            let tdHobby = document.createElement('td');
+            tdHobby.innerHTML = members[i].hobby;
+            tr.append(tdHobby);
+
+            let tdButton = document.createElement('td');
+            let button = document.createElement('button');
+            button.innerHTML = 'OK';
+            tdButton.append(button);
+            tr.append(tdButton);
+
+            document.getElementById('show').append(tr);
+        }
+    </script>
+</body>
+
+</html>

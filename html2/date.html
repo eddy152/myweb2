@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2/date.html</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        function createHeader(a) {
+            let tdTag = document.createElement('th');
+            tdTag.innerHTML = a;
+            trTag.append(tdTag);
+            tableTag.append(trTag);
+        }
+
+        function createData(item, idx, ary) {
+            if (idx % 7 == 0) {
+                trTag = document.createElement('tr');
+            }
+            let tdTag = document.createElement('td');
+            tdTag.innerHTML = item;
+            trTag.append(tdTag);
+            tableTag.append(trTag);
+        }
+
+        let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Str'];
+        let dates = [];
+        for (let i = 1; i <= 31; i++) {
+            dates.push(i);
+        }
+
+        let tableTag = document.createElement('table');
+        tableTag.setAttribute('border', '1');
+        tableTag.setAttribute('id', 'tbl');
+
+        let trTag = document.createElement('tr');
+
+        days.forEach(createHeader);
+        dates.forEach(createData);
+        document.getElementById('show').append(tableTag);
+    </script>
+</body>
+
+</html>
