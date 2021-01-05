@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax.html</title>
+    <style>
+        tr {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        let xhtp = new XMLHttpRequest();
+        xhtp.open('get', 'dataset.xml');
+        xhtp.send();
+        xhtp.onreadystatechange = () => {
+            // console.log(xhtp.readyState, xhtp.status);
+            if (xhtp.readyState == 4 && xhtp.status == 200) {
+                // console.log(xhtp.responseXML);
+                let doc = xhtp.responseXML;
+                let result = doc.querySelectorAll('dataset > record');
+                let table = document.createElement('table');
+                table.setAttribute('border', '1');
+                table.append(craeteHeader(result[0]));
+                for (let i = 0; i < result.length; i++) {
+                    let trTag = document.createElement('tr');
+                    for (let t = 0; t < result[i].childNodes.length; t++) {
+                        let tdTag = document.createElement('td');
+                        tdTag.innerHTML = result[i].childNodes[t].childNodes[0].nodeValue;
+                        trTag.appendChild(tdTag);
+                        table.appendChild(trTag);
+                    }
+                }
+                document.getElementById('show').appendChild(table);
+                // show.innerHTML = xhtp.responseText;
+            }
+        }
+        function craeteHeader(title) {
+            let trTag = document.createElement('tr');
+            for (let v = 0; v < title.childNodes.length; v++) {
+                let thTag = document.createElement('th');
+                thTag.innerHTML = title.childNodes[v].nodeName.toUpperCase();
+                trTag.appendChild(thTag);
+            }
+            return trTag
+        }
+    </script>
+</body>
+
+</html>
