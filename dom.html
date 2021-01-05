@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom.html</title>
+</head>
+
+<body>
+    <div id="show"></div>
+    <script>
+        function makeMulti(val) {
+            let tableTag = document.createElement('table');
+            tableTag.setAttribute('border', '1');
+            for (let i = 1; i < 10; i++) {
+                let trTag = document.createElement('tr');
+                let tdTag = document.createElement('td');
+                tdTag.innerHTML = val;
+                let tdTag1 = document.createElement('td');
+                tdTag1.innerHTML = '*';
+                let tdTag2 = document.createElement('td');
+                tdTag2.innerHTML = i;
+                let tdTag3 = document.createElement('td');
+                tdTag3.innerHTML = val * i;
+
+                trTag.append(tdTag);
+                trTag.append(tdTag1);
+                trTag.append(tdTag2);
+                trTag.append(tdTag3);
+
+                tableTag.append(trTag);
+            }
+            document.getElementById('show').append(tableTag);
+        }
+        document.write(makeMulti(2));
+    </script>
+</body>
+
+</html>

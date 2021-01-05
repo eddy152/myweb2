@@ -24,11 +24,13 @@ function showCal(yyyy, mm) {
             trTag = document.createElement('tr');
         }
         let tdTag = document.createElement('td');
+        tdTag.setAttribute('style', 'text-align:center;')
         if (idx % 7 == 0) {
             tdTag.setAttribute('style', 'background: red; color: white; text-align:center;')
         } else if (idx % 7 == 6) {
             tdTag.setAttribute('style', 'background: blue; color: white; text-align:center;')
         }
+        
         tdTag.innerHTML = item;
         trTag.append(tdTag);
         tableTag.append(trTag);
